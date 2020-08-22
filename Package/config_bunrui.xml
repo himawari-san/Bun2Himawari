@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="shift_jis"?>
+
+<setting>
+  <corpora name="分類語彙表増補改訂版データベース(ver.1.0.1)">
+    <li name="分類語彙表増補改訂版データベース(ver.1.0.1)" path="Corpora/Bunrui/corpus" />
+  </corpora>
+
+  <index_cix>
+    <li name="e" label="表記" middle_name="e" type="record_based" field_name="表記" />
+  </index_cix>
+
+  <index_eix>
+    <li name="bunrui" middle_name="bunrui" is_empty="false" top="true" />
+    <li name="e" middle_name="e" is_empty="false" />
+    <li name="c" middle_name="c" is_empty="false" isBrowsed="true" />
+    <li name="s" middle_name="s" is_empty="false" />
+    <li name="l" middle_name="l" is_empty="false" />
+  </index_eix>
+
+  <index_aix>
+    <li name="e" label="読み" middle_name="e" argument="読み" type="record_based" isCompleteMatch="false" field_name="表記" />
+    <li name="e" label="分類番号" middle_name="e" argument="分類番号" type="record_based" isCompleteMatch="false" field_name="表記" />
+  </index_aix>
+
+
+<!-- 検索関連オプション -->
+  <!-- KWIC の文脈長 -->
+  <length_context_kwic value="10" />
+  <!-- 検索時の文脈マッチング範囲 -->
+  <length_context_search value="10" />
+
+  <!-- 結果レコードのフィールド -->
+  <field_setting>
+    <li name="no" type="index" width="30" align="RIGHT" />
+    <li name="類似する語(前)" type="preceding_context" element="_sys" attribute="_preceding_context" width="180" align="RIGHT" sort_direction="R" />
+    <li name="表記" type="key" element="_sys" attribute="_key" width="80" sort_order="1" />
+    <li name="類似する語(後)" type="following_context" element="_sys" attribute="_following_context" width="160" />
+    <li name="読み" type="argument" element="e" attribute="読み" width="80" />
+    <li name="概念パス" type="argument" element="c" attribute="概念パス" width="80" />
+    <li name="分類番号" type="argument" element="c" attribute="分類番号" width="80" sort_order="2" align="RIGHT" />
+    <li name="段落番号" type="argument" element="s" attribute="段落番号" width="60" sort_order="3" align="RIGHT" />
+    <li name="小段落番号" type="argument" element="l" attribute="小段落番号" width="80" sort_order="4" align="RIGHT" />
+  </field_setting>
+
+
+  <corpus_fields name="分類語彙表について">
+    <li element="bunrui" attribute="name" name="資料名" width="80" />
+    <li element="bunrui" attribute="version" name="版" width="40" />
+  </corpus_fields>
+
+
+  <unit_fields name="分類一覧">
+    <li element="c" attribute="分類番号" name="分類番号" width="80" />
+    <li element="c" attribute="概念パス" name="概念パス" width="250" />
+  </unit_fields>
+
+
+  <stat_fields_1 label="分類番号，概念パス">
+    <li name="分類番号" width="80" />
+    <li name="概念パス" width="250" />
+    <li name="頻度" width="60" align="RIGHT" sort_type="numeric" />
+  </stat_fields_1>
+
+
+<!-- 閲覧表示関連オプション -->
+  <!-- ブラウザ -->
+  <browsers label="記事" temp_file="__searched_tmp.xml">
+    <li name="デフォルトブラウザ"  os="Windows" path="[[default_browser]]" />
+    <li name="Microsoft Internet Explorer" option="/c start iexplore" os="Windows" path="cmd"/>
+    <li name="Firefox(Windows)" option="/c start firefox" os="Windows" path="cmd"/>
+    <li name="Chrome(Windows)" option="/c start chrome" os="Windows" path="cmd"/>
+    <li name="デフォルトブラウザ"  os="Linux" path="[[default_browser]]" />
+    <li name="Firefox(Linux)" os="Linux" path="firefox"/>
+    <li name="Chrome(Linux)" os="Linux" path="chrome"/>
+    <li name="デフォルトブラウザ"  os="Mac" path="[[default_browser]]" />
+    <li name="Safari(Mac)" option="-a safari" os="Mac" path="open"/>
+    <li name="Firefox(Mac)" option="-a firefox" os="Mac" path="open"/>
+    <li name="Chrome(Mac)" option="-n -b com.google.Chrome" os="Mac" path="open"/> 
+  </browsers>
+
+  <!-- 表示用 XSL -->
+  <xsl_files root_path="Corpora/Bunrui/xslt">
+    <li label="標準表示" name="bunrui.xsl" />
+  </xsl_files>
+
+<!-- マニュアルの URL -->
+  <manual url="https://www2.ninjal.ac.jp/lrc/index.php?%C1%B4%CA%B8%B8%A1%BA%F7%A5%B7%A5%B9%A5%C6%A5%E0%A1%D8%A4%D2%A4%DE%A4%EF%A4%EA%A1%D9/%CD%F8%CD%D1%BC%D4%A5%DE%A5%CB%A5%E5%A5%A2%A5%EB/1_6"/>
+
+<!-- ホームページ URL -->
+  <hp url="https://www2.ninjal.ac.jp/lrc/index.php?%C1%B4%CA%B8%B8%A1%BA%F7%A5%B7%A5%B9%A5%C6%A5%E0%A1%D8%A4%D2%A4%DE%A4%EF%A4%EA%A1%D9"/>
+
+
+  <!-- フォントサイズ -->
+  <fontsize value="14" />
+
+  <!-- indexing 用のメニュー項目を表示するか否か -->
+  <isIndexingEnable value="true" />
+
+  <!-- コーパスファイル作成用のメニュー項目を表示するか否か -->
+  <isGenerateCorpusFileEnable value="false" />
+
+</setting>

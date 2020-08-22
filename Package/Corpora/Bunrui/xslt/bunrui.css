@@ -1,0 +1,52 @@
+/* bunrui.css
+   Written by Masaya YAMAGUCHI
+
+   revised: 2004-10-08
+*/
+
+body {
+	margin: 10px 1em 10px 1em;
+	font-size: 100%;
+}
+
+h1 {
+	font-family: Arial, sans-serif;
+	font-size: 175%;
+}
+
+h2 {
+	font-family: Arial, sans-serif;
+	font-size: 110%;
+}
+
+
+
+p {
+	margin: 0em 0em 0.2em 0em;
+}
+
+hr.kugiri
+{
+	text-align:center;
+	width:80%;
+	border-width:1px 0px;
+}
+
+span.hyouki {
+	font-size: 100%;
+}	
+
+span.midashi {
+	font-size: 60%;
+}	
+
+span.target_char {
+	color: red;
+}	
+
+span.pright {
+	position: absolute;
+	left: 25em;
+}
+
+.target_string	{color:red;font-weight:bold;cursor:hand}
